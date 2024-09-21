@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <form id="form">
+            <input type="text" id="password" placeholder="password">
+           
+
+            <button type="submit">Submit</button>
+        </form>
+    
+    
+    <script>
+          form.addEventListener('submit',function(event) {
+            event.preventDefault();
+            console.log(event.target[1]);
+            var input=form[0].value;
+            var span=document.querySelector("span");
+            if(input.length>8){
+                console.log("password is strong");
+            }
+            else if(input.length<8 && input.length>5){
+                console.log("password is medium");
+            }
+            else{
+                console.log("password is weak");
+            }
+           while(input.length>8){
+            console.log("form submitted");
+            span.style.display="none";
+            }
+        })
+        
+    </script>
+</body>
+</html>
